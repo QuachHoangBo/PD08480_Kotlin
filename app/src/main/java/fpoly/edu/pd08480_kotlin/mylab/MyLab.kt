@@ -68,8 +68,14 @@ fun MyLab (navController: NavController){
         Spacer(modifier = Modifier.height(10.dp))
         //Lab 5
         Row(modifier = Modifier.size(width = 400.dp, height = 50.dp)) {
-            Button(onClick = { Toast.makeText(context,"Cập nhật thêm....",Toast.LENGTH_SHORT) }) {
-                Text(text = "Lab 5")
+            Button(onClick = { navController.navigate("login") }) {
+                Text(text = "Lab 5b1")
+            }
+            Button(onClick = { navController.navigate("login") }) {
+                Text(text = "Lab 5b2")
+            }
+            Button(onClick = { navController.navigate("login") }) {
+                Text(text = "Lab 5b3")
             }
         }
         Spacer(modifier = Modifier.height(10.dp))

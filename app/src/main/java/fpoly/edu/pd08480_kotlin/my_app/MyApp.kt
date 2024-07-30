@@ -24,6 +24,6 @@ fun MyApp(){
         composable("lab3"){ CounterCard(navController = navController) }
         composable("lab4b2"){ Lab4b2(navController = navController) }
         composable("lab4b3"){ Lab4b3(navController = navController) }
-
+//        composable("lab5"){ Lab5b1(navController = navController) }
     }
 }
