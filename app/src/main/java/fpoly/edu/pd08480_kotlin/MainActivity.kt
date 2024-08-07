@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import fpoly.edu.pd08480_kotlin.my_app.MyApp
+import fpoly.edu.pd08480_kotlin.my_app.NavigatorScreen
 
 
 class MainActivity : ComponentActivity() {
@@ -19,7 +19,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MyApp()
+//                    MyApp()
+                    NavigatorScreen()
                 }
             }
         }
