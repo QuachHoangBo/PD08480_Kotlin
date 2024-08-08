@@ -11,6 +11,7 @@ fun NavigatorScreen(){
     NavHost(navController = navController, startDestination = "homeScreen" ){
         // Assignment
         composable("homescreen"){ HomeScreen(navController = navController) }
+        composable("homescreen2"){ HomeScreen2(navController = navController) }
         composable("itemscreen"){ ItemScreen(navController = navController) }
 
     }

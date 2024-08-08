@@ -22,8 +22,9 @@ fun ItemScreen(navController: NavController){
         Image(painter = painterResource(id = R.drawable.image3), contentDescription = "Ảnh thời trang")
         Text(text = "Áo phông nam")
         Text(text = "23.000 đồng")
+        Text("Mô tả: ")
         Button(onClick = { navController.navigate("homescreen") }) {
-            Text(text = "Black")
+            Text(text = "Thêm vào giỏ hàng")
         }
     }
 }

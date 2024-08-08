@@ -35,19 +35,18 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import fpoly.edu.pd08480_kotlin.R
 
-data class ShopModel(val name: String, val image: Int, val price: String)
-val ShopList = mutableListOf<ShopModel>()
+data class ShopModel2(val name: String, val image: Int, val price: String)
+val ShopList2 = mutableListOf<ShopModel2>()
 
 @Composable
-fun HomeScreen(navController: NavController){
+fun HomeScreen2(navController: NavController){
     var searchValue by remember {
         mutableStateOf("")
     }
     val context = LocalContext.current
-
-    ShopList.add(ShopModel("Áo nam phông rộng",R.drawable.image1,"23.000 đồng"))
-    ShopList.add(ShopModel("Áo nam phông rộng",R.drawable.image2,"23.000 đồng"))
-    ShopList.add(ShopModel("Áo nam phông rộng",R.drawable.image3,"23.000 đồng"))
+    ShopList2.add(ShopModel2("Áo phông rộng",R.drawable.image1,"23.000 đồng"))
+    ShopList2.add(ShopModel2("Áo phông rộng",R.drawable.image2,"23.000 đồng"))
+    ShopList2.add(ShopModel2("Áo phông rộng",R.drawable.image3,"23.000 đồng"))
 
 
     Column(modifier = Modifier
@@ -64,17 +63,18 @@ fun HomeScreen(navController: NavController){
             .height(50.dp)){
             Button(onClick = { /*TODO*/ },) {
                 Text(text = "Thời trang nam")
-                Toast.makeText(context,"Bạn đang ở trang này.",Toast.LENGTH_SHORT)
+                navController.navigate("homescreen1")
             }
             Button(onClick = { /*TODO*/ }) {
                 Text(text = "Thời trang nữ")
                 navController.navigate("homescreen2")
+                Toast.makeText(context,"Bạn đang ở trang này.", Toast.LENGTH_SHORT)
             }
         }
         Spacer(modifier = Modifier.height(10.dp))
         LazyColumn {
-            items(ShopList) {
-                    model -> CardItem(model = model,navController)
+            items(ShopList2) {
+                    model -> CardItem2(model = model,navController)
             }
         }
 
@@ -84,9 +84,9 @@ fun HomeScreen(navController: NavController){
 }
 
 @Composable
-fun CardItem(model: ShopModel, navController: NavController){
+fun CardItem2(model: ShopModel2, navController: NavController){
     Row(modifier = Modifier.padding(10.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Center) {
-        Image(painter = painterResource(id = model.image), contentDescription = "Ảnh thời trang", modifier = Modifier.width(200.dp))
+        Image(painter = painterResource(id = model.image), contentDescription = "Ảnh thời trang", modifier = Modifier.width(200.dp).height(200.dp))
         Column(modifier = Modifier.fillMaxSize().padding(10.dp)){
             Text(text = model.name)
             Text(text = model.price)
@@ -98,7 +98,7 @@ fun CardItem(model: ShopModel, navController: NavController){
 }
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun reviewPage(){
+fun reviewPage3(){
     val navController = rememberNavController()
-    HomeScreen(navController)
+    HomeScreen2(navController)
 }
